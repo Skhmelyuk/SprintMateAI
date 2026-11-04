@@ -24,19 +24,19 @@ export function FormatSelector({ value, onChange }: Props) {
             onClick={() => onChange(opt.id)}
             className={`flex items-center gap-3 rounded-xl border p-3.5 text-left transition ${
               active
-                ? 'border-cyan-500 bg-cyan-500/10 ring-1 ring-cyan-500/40'
-                : 'border-slate-700 bg-slate-900/50 hover:border-slate-600'
+                ? 'border-red-500 bg-red-500/10 ring-1 ring-red-500/40'
+                : 'border-slate-200 bg-white hover:border-slate-300'
             }`}
           >
             <div
               className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-lg transition ${
-                active ? 'bg-cyan-500 text-white' : 'bg-slate-800 text-slate-400'
+                active ? 'bg-red-500 text-white' : 'bg-slate-100 text-slate-600'
               }`}
             >
               <Icon size={18} />
             </div>
             <div className="min-w-0">
-              <div className={`text-sm font-semibold ${active ? 'text-white' : 'text-slate-200'}`}>
+              <div className={`text-sm font-semibold ${active ? 'text-red-700' : 'text-slate-800'}`}>
                 {opt.label}
               </div>
               <div className="text-xs text-slate-500">{opt.sub}</div>

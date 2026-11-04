@@ -7,14 +7,14 @@ interface Props {
 export function EmptyState({ onTrySample }: Props) {
   return (
     <div className="flex flex-col items-center justify-center px-4 py-16 text-center sm:py-24">
-      <div className="float-soft mb-6 flex h-20 w-20 items-center justify-center rounded-3xl bg-gradient-to-br from-blue-500/20 to-cyan-400/20 ring-1 ring-cyan-500/30">
-        <Rocket size={40} className="text-cyan-400" />
+      <div className="float-soft mb-6 flex h-20 w-20 items-center justify-center rounded-3xl bg-gradient-to-br from-red-200/30 to-orange-200/30 ring-1 ring-red-500/30">
+        <Rocket size={40} className="text-red-500" />
       </div>
 
-      <h2 className="mb-3 max-w-md text-2xl font-bold text-white sm:text-3xl">
-        Спробуйте своій ідею за <span className="text-cyan-400">хвилини</span>
+      <h2 className="mb-3 max-w-md text-2xl font-bold text-slate-900 sm:text-3xl">
+        Спробуйте своій ідею за <span className="text-red-500">хвилини</span>
       </h2>
-      <p className="mb-8 max-w-md text-sm leading-relaxed text-slate-400 sm:text-base">
+      <p className="mb-8 max-w-md text-sm leading-relaxed text-slate-600 sm:text-base">
         Опишіть тему спринту, оберіть тривалість і формат — SprintMate AI декомпозує
         його на 3 фази з таймінгом, артефактами та чекбоксами для виконання.
       </p>
@@ -27,7 +27,7 @@ export function EmptyState({ onTrySample }: Props) {
 
       <button
         onClick={onTrySample}
-        className="group flex items-center gap-2 rounded-xl border border-cyan-500/40 bg-cyan-500/10 px-5 py-3 text-sm font-semibold text-cyan-300 transition hover:bg-cyan-500/20 hover:ring-1 hover:ring-cyan-500/50"
+        className="group flex items-center gap-2 rounded-xl border border-red-500/40 bg-red-500/10 px-5 py-3 text-sm font-semibold text-red-600 transition hover:bg-red-500/20 hover:ring-1 hover:ring-red-500/50"
       >
         <Sparkles size={18} />
         Спробувати зразок: Розробка 2D-гри
@@ -47,12 +47,12 @@ function FeatureBadge({
   desc: string;
 }) {
   return (
-    <div className="flex items-center gap-3 rounded-xl border border-slate-800 bg-slate-900/60 px-4 py-3 text-left">
-      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-slate-800 text-cyan-400">
+    <div className="flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3 text-left shadow-sm">
+      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-red-100 text-red-500">
         <Icon size={18} />
       </div>
       <div>
-        <div className="text-sm font-semibold text-slate-200">{title}</div>
+        <div className="text-sm font-semibold text-slate-800">{title}</div>
         <div className="text-xs text-slate-500">{desc}</div>
       </div>
     </div>

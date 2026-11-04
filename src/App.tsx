@@ -96,12 +96,12 @@ function App() {
   const showSuccess = status === 'success' && plan;
 
   return (
-    <div className="min-h-screen bg-slate-950">
+    <div className="min-h-screen bg-slate-50">
       {/* Ambient gradient background */}
       <div className="pointer-events-none fixed inset-0 overflow-hidden">
-        <div className="absolute -left-40 -top-40 h-96 w-96 rounded-full bg-blue-600/10 blur-3xl" />
-        <div className="absolute -right-40 top-1/3 h-96 w-96 rounded-full bg-cyan-500/10 blur-3xl" />
-        <div className="absolute bottom-0 left-1/3 h-72 w-72 rounded-full bg-blue-500/5 blur-3xl" />
+        <div className="absolute -left-40 -top-40 h-96 w-96 rounded-full bg-red-200/30 blur-3xl" />
+        <div className="absolute -right-40 top-1/3 h-96 w-96 rounded-full bg-orange-200/30 blur-3xl" />
+        <div className="absolute bottom-0 left-1/3 h-72 w-72 rounded-full bg-red-100/20 blur-3xl" />
       </div>
 
       <div className="relative">
@@ -138,7 +138,7 @@ function App() {
         </main>
 
         <footer className="mx-auto max-w-4xl px-4 pb-8 text-center sm:px-6">
-          <p className="text-xs text-slate-600">
+          <p className="text-xs text-slate-400">
             SprintMate AI · Планувальник навчального хакатону · Powered by OpenRouter
           </p>
         </footer>

@@ -28,11 +28,11 @@ export function SprintForm({
   const rangeProgress = ((hours - 1) / 7) * 100;
 
   return (
-    <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-5 sm:p-6">
+    <div className="rounded-2xl border border-slate-200 bg-white p-5 sm:p-6 shadow-sm">
       {/* Title input */}
       <div className="mb-5">
-        <label className="mb-1.5 flex items-center gap-2 text-sm font-medium text-slate-300">
-          <Target size={16} className="text-cyan-400" />
+        <label className="mb-1.5 flex items-center gap-2 text-sm font-medium text-slate-700">
+          <Target size={16} className="text-red-500" />
           Назва та мета спринту
         </label>
         <input
@@ -43,14 +43,14 @@ export function SprintForm({
             if (e.key === 'Enter' && !loading) onSubmit();
           }}
           placeholder="Наприклад: Створити Telegram-бота для трекінгу звичок"
-          className={`w-full rounded-lg border bg-slate-950 px-3.5 py-3 text-sm text-white placeholder-slate-600 outline-none transition focus:ring-1 ${
+          className={`w-full rounded-lg border bg-white px-3.5 py-3 text-sm text-slate-900 placeholder-slate-400 outline-none transition focus:ring-1 ${
             error
               ? 'border-red-500 focus:border-red-500 focus:ring-red-500'
-              : 'border-slate-700 focus:border-cyan-500 focus:ring-cyan-500'
+              : 'border-slate-300 focus:border-red-500 focus:ring-red-500'
           }`}
         />
         {error && (
-          <p className="mt-2 flex items-center gap-1.5 text-sm text-red-400">
+          <p className="mt-2 flex items-center gap-1.5 text-sm text-red-600">
             <AlertCircle size={14} />
             Вкажіть тему вашого спринту перед генерацією
           </p>
@@ -60,11 +60,11 @@ export function SprintForm({
       {/* Hours slider */}
       <div className="mb-5">
         <div className="mb-2 flex items-center justify-between">
-          <label className="flex items-center gap-2 text-sm font-medium text-slate-300">
-            <Clock size={16} className="text-cyan-400" />
+          <label className="flex items-center gap-2 text-sm font-medium text-slate-700">
+            <Clock size={16} className="text-red-500" />
             Тривалість спринту
           </label>
-          <span className="rounded-lg border border-slate-700 bg-slate-950 px-3 py-1 text-sm font-bold text-cyan-300">
+          <span className="rounded-lg border border-slate-300 bg-white px-3 py-1 text-sm font-bold text-red-600">
             {hours} {hours === 1 ? 'година' : hours < 5 ? 'години' : 'годин'}
           </span>
         </div>
@@ -78,7 +78,7 @@ export function SprintForm({
           style={{ ['--range-progress' as string]: `${rangeProgress}%` }}
           className="w-full"
         />
-        <div className="mt-1.5 flex justify-between text-xs text-slate-600">
+        <div className="mt-1.5 flex justify-between text-xs text-slate-500">
           <span>1 год</span>
           <span>4 год</span>
           <span>8 год</span>
@@ -87,7 +87,7 @@ export function SprintForm({
 
       {/* Format */}
       <div className="mb-6">
-        <label className="mb-2 block text-sm font-medium text-slate-300">Формат спринту</label>
+        <label className="mb-2 block text-sm font-medium text-slate-700">Формат спринту</label>
         <FormatSelector value={format} onChange={onFormatChange} />
       </div>
 
@@ -95,7 +95,7 @@ export function SprintForm({
       <button
         onClick={onSubmit}
         disabled={loading}
-        className="group relative flex w-full items-center justify-center gap-2.5 overflow-hidden rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 py-3.5 text-base font-bold text-white shadow-lg shadow-cyan-500/20 transition hover:from-blue-500 hover:to-cyan-400 disabled:cursor-not-allowed disabled:opacity-60"
+        className="group relative flex w-full items-center justify-center gap-2.5 overflow-hidden rounded-xl bg-gradient-to-r from-red-500 to-orange-500 py-3.5 text-base font-bold text-white shadow-lg shadow-red-500/25 transition hover:from-red-400 hover:to-orange-400 disabled:cursor-not-allowed disabled:opacity-60"
       >
         <Rocket size={20} className="transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
         {loading ? 'Генеруємо...' : 'Сформувати спринт-план через AI'}

@@ -24,18 +24,18 @@ export function SettingsModal({ open, settings, onChange, onClose }: Props) {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/30 backdrop-blur-sm p-4"
       onClick={onClose}
     >
       <div
-        className="w-full max-w-md rounded-2xl border border-slate-700 bg-slate-900 p-6 shadow-2xl fade-in-up"
+        className="w-full max-w-md rounded-2xl border border-slate-200 bg-white p-6 shadow-2xl fade-in-up"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="mb-5 flex items-center justify-between">
-          <h2 className="text-lg font-bold text-white">Налаштування API</h2>
+          <h2 className="text-lg font-bold text-slate-900">Налаштування API</h2>
           <button
             onClick={onClose}
-            className="rounded-lg p-1.5 text-slate-400 transition hover:bg-slate-800 hover:text-white"
+            className="rounded-lg p-1.5 text-slate-400 transition hover:bg-slate-100 hover:text-slate-900"
             aria-label="Закрити"
           >
             <X size={20} />
@@ -45,8 +45,8 @@ export function SettingsModal({ open, settings, onChange, onClose }: Props) {
         <div className="space-y-5">
           {/* API Key */}
           <div>
-            <label className="mb-1.5 flex items-center gap-2 text-sm font-medium text-slate-300">
-              <KeyRound size={16} className="text-cyan-400" />
+            <label className="mb-1.5 flex items-center gap-2 text-sm font-medium text-slate-700">
+              <KeyRound size={16} className="text-red-500" />
               OpenRouter API Key
             </label>
             <input
@@ -54,7 +54,7 @@ export function SettingsModal({ open, settings, onChange, onClose }: Props) {
               value={settings.apiKey}
               onChange={(e) => onChange({ ...settings, apiKey: e.target.value })}
               placeholder="sk-or-v1-..."
-              className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2.5 text-sm text-white placeholder-slate-600 outline-none transition focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500"
+              className="w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-sm text-slate-900 placeholder-slate-400 outline-none transition focus:border-red-500 focus:ring-1 focus:ring-red-500"
             />
             <p className="mt-1.5 text-xs text-slate-500">
               Зберігається лише у вашому браузері. Отримати ключ — openrouter.ai/keys
@@ -63,17 +63,17 @@ export function SettingsModal({ open, settings, onChange, onClose }: Props) {
 
           {/* Model */}
           <div>
-            <label className="mb-1.5 flex items-center gap-2 text-sm font-medium text-slate-300">
-              <Cpu size={16} className="text-blue-400" />
+            <label className="mb-1.5 flex items-center gap-2 text-sm font-medium text-slate-700">
+              <Cpu size={16} className="text-red-500" />
               Модель
             </label>
             <select
               value={settings.model}
               onChange={(e) => onChange({ ...settings, model: e.target.value })}
-              className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2.5 text-sm text-white outline-none transition focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500"
+              className="w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-sm text-slate-900 outline-none transition focus:border-red-500 focus:ring-1 focus:ring-red-500"
             >
               {MODEL_OPTIONS.map((m) => (
-                <option key={m} value={m} className="bg-slate-900">
+                <option key={m} value={m} className="bg-white">
                   {m}
                 </option>
               ))}
@@ -81,7 +81,7 @@ export function SettingsModal({ open, settings, onChange, onClose }: Props) {
           </div>
 
           {/* Mock mode */}
-          <label className="flex cursor-pointer items-start gap-3 rounded-lg border border-slate-700 bg-slate-950/50 p-3.5 transition hover:border-slate-600">
+          <label className="flex cursor-pointer items-start gap-3 rounded-lg border border-slate-300 bg-white/50 p-3.5 transition hover:border-slate-400">
             <input
               type="checkbox"
               checked={settings.mockMode}
@@ -90,7 +90,7 @@ export function SettingsModal({ open, settings, onChange, onClose }: Props) {
             />
             <div
               className={`relative h-6 w-11 shrink-0 rounded-full transition ${
-                settings.mockMode ? 'bg-cyan-500' : 'bg-slate-700'
+                settings.mockMode ? 'bg-red-500' : 'bg-slate-300'
               }`}
             >
               <span
@@ -100,8 +100,8 @@ export function SettingsModal({ open, settings, onChange, onClose }: Props) {
               />
             </div>
             <span>
-              <span className="flex items-center gap-1.5 text-sm font-medium text-slate-200">
-                <FlaskConical size={15} className="text-cyan-400" />
+              <span className="flex items-center gap-1.5 text-sm font-medium text-slate-700">
+                <FlaskConical size={15} className="text-red-500" />
                 Тестовий режим без ключа (Mock-генерація)
               </span>
               <span className="mt-0.5 block text-xs text-slate-500">
@@ -113,7 +113,7 @@ export function SettingsModal({ open, settings, onChange, onClose }: Props) {
 
         <button
           onClick={onClose}
-          className="mt-6 w-full rounded-lg bg-gradient-to-r from-blue-600 to-cyan-500 py-2.5 text-sm font-semibold text-white transition hover:from-blue-500 hover:to-cyan-400"
+          className="mt-6 w-full rounded-lg bg-gradient-to-r from-red-500 to-orange-500 py-2.5 text-sm font-semibold text-white transition hover:from-red-400 hover:to-orange-400"
         >
           Готово
         </button>
